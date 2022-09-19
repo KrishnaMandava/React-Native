@@ -1,45 +1,57 @@
-import React from 'react';
-import {FlatList, Text, View, StyleSheet} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {FlatList, Text, View, StyleSheet, Button, Alert} from 'react-native';
 
-const data = [
+const names = [
   {key: 'Devin'},
   {key: 'Dan'},
   {key: 'Dominic'},
-  {key: 'Jackson'},
-  {key: 'James'},
-  {key: 'Joel'},
-  {key: 'John'},
-  {key: 'Jillian'},
-  {key: 'Jimmy'},
-  {key: 'Julie'},
-  {key: 'Devin'},
-  {key: 'Dan'},
-  {key: 'Dominic'},
-  {key: 'Jackson'},
-  {key: 'James'},
-  {key: 'Joel'},
-  {key: 'John'},
-  {key: 'Jillian'},
-  {key: 'Jimmy'},
-  {key: 'Julie'},
-  {key: 'Devin'},
-  {key: 'Dan'},
-  {key: 'Dominic'},
-  {key: 'Jackson'},
-  {key: 'James'},
-  {key: 'Joel'},
-  {key: 'John'},
-  {key: 'Jillian'},
-  {key: 'Jimmy'},
-  {key: 'Julie'},
+  // {key: 'Jackson'},
+  // {key: 'James'},
+  // {key: 'Joel'},
+  // {key: 'John'},
+  // {key: 'Jillian'},
+  // {key: 'Jimmy'},
+  // {key: 'Julie'},
+  // {key: 'Devin'},
+  // {key: 'Dan'},
+  // {key: 'Dominic'},
+  // {key: 'Jackson'},
+  // {key: 'James'},
+  // {key: 'Joel'},
+  // {key: 'John'},
+  // {key: 'Jillian'},
+  // {key: 'Jimmy'},
+  // {key: 'Julie'},
+  // {key: 'Devin'},
+  // {key: 'Dan'},
+  // {key: 'Dominic'},
+  // {key: 'Jackson'},
+  // {key: 'James'},
+  // {key: 'Joel'},
+  // {key: 'John'},
+  // {key: 'Jillian'},
+  // {key: 'Jimmy'},
+  // {key: 'Julie'},
 ];
 
 const FlatListComponent = () => {
+  const [data, setData] = useState(names);
+  const [state, setState] = useState(1);
+  const updateData = e => {
+    names.push({key: 'Test'});
+    // setState(state + 1);
+  };
+  console.log('renderrrrrrr.........');
   return (
-    <View style={styles.container}>
+    <View>
+      <Button onPress={e => updateData(e)} title="Update" />
+      <Button title="Right button" onPress={() => setData(data + 1)} />
+      <Button title="Increase" onPress={() => setState(state + 1)} />
       <FlatList
-        data={data}
+        data={names}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+        keyExtractor={(item, index) => item + index}
+        // extraData={data}
       />
     </View>
   );
