@@ -26,6 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import FlatListComponent from './src/components/FlatListComponent';
+import FlexComponent from './src/components/FlexComponent';
+import SectionListComponent from './src/components/SectionListComponent';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -62,7 +64,7 @@ const App: () => Node = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return <FlatListComponent />;
+  return <SectionListComponent />;
 };
 
 const styles = StyleSheet.create({
