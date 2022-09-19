@@ -28,6 +28,7 @@ import {
 import FlatListComponent from './src/components/FlatListComponent';
 import FlexComponent from './src/components/FlexComponent';
 import SectionListComponent from './src/components/SectionListComponent';
+import StatusBarComponent from './src/components/StatusBarComponent';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -64,7 +65,7 @@ const App: () => Node = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return <SectionListComponent />;
+  return <StatusBarComponent />;
 };
 
 const styles = StyleSheet.create({
