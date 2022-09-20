@@ -30,6 +30,7 @@ import FlexComponent from './src/components/FlexComponent';
 import SectionListComponent from './src/components/SectionListComponent';
 import StatusBarComponent from './src/components/StatusBarComponent';
 import VirtulizedListComponent from './src/components/VirtulizedListComponent';
+import RefreshComponenmt from './src/components/RefreshComponent';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -66,7 +67,7 @@ const App: () => Node = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return <VirtulizedListComponent />;
+  return <RefreshComponenmt />;
 };
 
 const styles = StyleSheet.create({
